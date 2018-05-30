@@ -1,0 +1,31 @@
+---
+- name: add user siedler
+  user: 
+    name: siedler
+    shell: /bin/bash
+    state: present
+    password: '{{ passwd_hash }}'
+- name: create siedler authorized_keys
+  authorized_key: 
+    user: siedler
+    state: present
+    key: "{{ lookup('file', '/home/tianzhi/.ssh/id_rsa.pub') }}"
+- name: add master public key to siedler authorized_keys
+  shell: /bin/echo {{ public_key }} >> /home/siedler/.ssh/authorized_keys
+#- name: set sudoer
+#  lineinfile: 
+#    path: /etc/sudoers
+#    state: present
+#    line: 'siedler  ALL=(ALL)       ALL'
+#- name: alter sshd_config
+#  lineinfile:
+#    dest: /etc/ssh/sshd_config
+#    regexp: "{{ item.regexp }}"
+#    line: "{{ item.line }}"
+#    state: present
+#  with_items:
+#    - { regexp: "^PasswordAuthentication", line: "PasswordAuthentication no" }
+#    - { regexp: "^PermitRootLogin", line: "PermitRootLogin no" }
+#    - { regexp: "^Port", line: "Port 22" }
+#- name: restart sshd
+#  service: name=sshd state=restarted
