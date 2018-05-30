@@ -29,3 +29,4 @@
 #    - { regexp: "^Port", line: "Port 22" }
 #- name: restart sshd
 #  service: name=sshd state=restarted
+#used vars: username passwd_hash public_key
