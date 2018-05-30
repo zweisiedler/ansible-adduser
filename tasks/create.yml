@@ -1,22 +1,22 @@
 ---
-- name: add user siedler
+- name: add user
   user: 
-    name: siedler
+    name: {{ username }}
     shell: /bin/bash
     state: present
     password: '{{ passwd_hash }}'
-- name: create siedler authorized_keys
+- name: create authorized_keys
   authorized_key: 
-    user: siedler
+    user: {{ username }}
     state: present
-    key: "{{ lookup('file', '/home/tianzhi/.ssh/id_rsa.pub') }}"
-- name: add master public key to siedler authorized_keys
-  shell: /bin/echo {{ public_key }} >> /home/siedler/.ssh/authorized_keys
+    key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
+- name: add master public key to authorized_keys
+  shell: /bin/echo {{ public_key }} >> /home/{{ username }}/.ssh/authorized_keys
 #- name: set sudoer
 #  lineinfile: 
 #    path: /etc/sudoers
 #    state: present
-#    line: 'siedler  ALL=(ALL)       ALL'
+#    line: '{{ username }}  ALL=(ALL)       ALL'
 #- name: alter sshd_config
 #  lineinfile:
 #    dest: /etc/ssh/sshd_config
