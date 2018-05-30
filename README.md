@@ -1,2 +1,2 @@
-# ansible-adduser
-useradd script for ansible
+# ansible-useradd
+useradd roles for ansible
