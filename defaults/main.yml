@@ -1,0 +1,7 @@
+---
+username: siedler
+#use the follow command to get a hash password.
+#python -c "from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.using(rounds=5000).hash(getpass.getpass())"
+passwd_hash: $6$2bxxDZmaIE.e.XX8$UuYcybtZrjjC9SVY9J27EQ1/RCQgqdwM3SfLjwNXZNAopwJfWbTLzt0LRKog98jsBRgvubd/DAYyx8cTL.jAW0
+#from ~/.ssh/id_rsa.pub
+public_key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA3jKM+i/Jc+t7Nv17htcEkKSMr1798fh2xOgRIRK6/po9UNeVrQmMjtulRjq5G3/edVNhbMG1f7uR0oir+zyREAF7h4rMP1xg+jJnJHAjrkmAHkrAW+a9gemqqVNKjMpkYua57OA7wNDHWNJOvlKG7NaHgZJMhhLZQcZQYKjZVZ+LVwnsIwt5QH2CmMgPIv2cey+iIazWkh6//7XYwSKKH5OIQTJ3Jx2uzt9g16e12b5qcet7UUSfv2eEAGP7YKl5V9gKd6KqNiir5PNIuJ+mgukc/iCzCd5ZzvNyzvQ6IYCfmHgttm1+0yxRjDHodDYnDI4+KD+pZ2LuJGn2sxGDuw== siedler@siedler
