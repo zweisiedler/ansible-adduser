@@ -1,2 +1,2 @@
 # ansible-adduser
-useradd
+useradd script for ansible
